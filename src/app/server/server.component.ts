@@ -1,15 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-server',
-  templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css']
+  selector: '[app-server]',
+  template:`
+  <div class='big-div'>
+    <p>Name : {{name}}</p>
+    <p>Age : {{age}}</p>
+  </div>
+  <div>
+    Name : <input type='text' value='{{name}}' />
+    Age : <input type='text' value='{{age}}' />
+  </div>
+  <div>
+    <p>{{counter}}</p>
+    <button (click)='increaseCounter()'>Increase Counter</button>
+  </div>
+  `,//templateUrl: './server.component.html',
+  styles:[`
+    .big-div{
+        Color:green;
+        margin-top:20px;
+        font-size:40px;
+    }
+  `]//styleUrls: ['./server.component.css']
 })
-export class ServerComponent implements OnInit {
+export class ServerComponent{
+  name:string="Rehan";
+  age:number=26;
 
-  constructor() { }
+  counter:number=0;
 
-  ngOnInit() {
+  private increaseCounter(this){
+    this.counter++;
+  }
+
+  public getCounter(){
+    return this.counter;
   }
 
 }

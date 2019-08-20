@@ -1,5 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div app-server></div>
+</div>
 
+<hr>
+
+<div class="container">
+  <p>{{counter}}</p>
+
+  <button (click)="increaseCounter()">App Counter</button><br/>
+  <button (click)="getServerCounter()">Server Counter</button>
+</div>
+
+<!--
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
@@ -32,7 +45,7 @@
         </form>
     </div>
   </div>
-</div>
+</div>-->
 
 
 <router-outlet></router-outlet>
