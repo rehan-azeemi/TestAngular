@@ -4,8 +4,10 @@ import { Component, OnInit } from '@angular/core';
   selector: '[app-server]',
   template:`
   <div class='big-div'>
-    <p>Name : {{name}}</p>
+    <p>Name : {{name.toUpperCase()}}</p>
+    <p>Name Length : {{name.length}}</p>
     <p>Age : {{age}}</p>
+    <p>Counter : {{getCounter()}}</p>
   </div>
   <div>
     Name : <input type='text' value='{{name}}' />

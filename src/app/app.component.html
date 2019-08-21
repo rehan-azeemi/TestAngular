@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
+<!--<div class="container">
   <div app-server></div>
 </div>
 
@@ -10,7 +10,7 @@
 
   <button (click)="increaseCounter()">App Counter</button><br/>
   <button (click)="getServerCounter()">Server Counter</button>
-</div>
+</div>-->
 
 <!--
 <div class="container">
@@ -47,5 +47,31 @@
   </div>
 </div>-->
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <ng-container *ngFor="let event of events; let i = index">
+        <app-event [value]="event"></app-event>
+      </ng-container>
+    </div>
+    <div class="col-md-3">
+      Right column
+    </div>
+  </div>
+</div>
 
+<!--<ul>
+  <li *ngFor="let event of events; let i = index">
+    {{ i }} {{event.subject}}
+  </li>
+</ul>-->
+
+<!--<ng-container *ngFor="let event of events; let i = index">
+  {{ i }} {{ event.subject }}
+</ng-container>
+-->
+<!--
+<ng-container *ngFor="let event of events; let i = index">
+  <app-event [value]="event"></app-event>
+</ng-container>-->
 <router-outlet></router-outlet>
