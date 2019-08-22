@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   </div>
   <div>
     Name : <input type='text' value='{{name}}' />
-    Age : <input type='text' value='{{age}}' />
+    Age : <input type='text' value='{{age}}' [disabled] = "isDisabled"/>
   </div>
   <div>
     <p>{{counter}}</p>
@@ -29,7 +29,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServerComponent{
   name:string="Rehan";
   age:number=26;
-
+  isDisabled = false;
   counter:number=0;
 
   private increaseCounter(this){

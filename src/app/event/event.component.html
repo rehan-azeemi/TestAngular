@@ -1,4 +1,16 @@
-<h1>{{value.time}} : {{value.subject}}</h1>
-<p>Location : {{value.location}}</p>
-<p>Description : {{value.description}}</p>
+<div class="row">
+    <div class="col-md-11">
+        <h1>{{value.time}} : {{value.subject}}</h1>
+    </div>
+    <div class="col-md-1">
+        <button (click)="handleDeleteFunction()" type="button" class="btn btn-xs btn-danger float-right"><span class="glyphicon glyphicon-minus"></span></button>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <p *ngIf="value.location"><span class="glyphicon glyphicon-map-marker text-success" style="font-size:25px;"></span> {{value.location}}</p>
+    </div>
+</div>
+<div class="well well-lg" *ngIf="value.description">Description : {{value.description}}</div>
 <hr>

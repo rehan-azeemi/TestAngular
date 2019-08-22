@@ -51,11 +51,30 @@
   <div class="row">
     <div class="col-md-9">
       <ng-container *ngFor="let event of events; let i = index">
-        <app-event [value]="event"></app-event>
+        <app-event [value]="event" (deleteEventInstanceEvent)="deleteEvent($event)"></app-event>
       </ng-container>
+      <div class="text-center">
+      <button (click)= type="button" class="btn btn-info">
+          Add Event
+        </button>
+        </div>
     </div>
+    
     <div class="col-md-3">
-      Right column
+        <h3>Schedule</h3>
+        <h6>
+          It's going to be busy that today. You have
+          <b> {{ events.length }} events </b> today.
+        </h6>
+        <h1>
+          <div class="row">
+            <div class="col-md-12 ">Sunny 23°C</div>
+          </div>
+        </h1>
+        <p>
+          Don't forget your sunglasses. Today will dry and sunny, becoming warm
+          in the afternoon with temperatures of between 20 and 25 degrees.
+        </p>
     </div>
   </div>
 </div>
@@ -74,4 +93,7 @@
 <ng-container *ngFor="let event of events; let i = index">
   <app-event [value]="event"></app-event>
 </ng-container>-->
+
+
+<!--<app-agenda-app></app-agenda-app>-->
 <router-outlet></router-outlet>

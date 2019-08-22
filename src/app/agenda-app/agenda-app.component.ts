@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agenda-app.component.css']
 })
 export class AgendaAppComponent implements OnInit {
-
+  isDisabled:boolean=true;
   constructor() { }
 
   ngOnInit() {

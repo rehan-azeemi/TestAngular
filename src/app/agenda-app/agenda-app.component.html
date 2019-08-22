@@ -1,1 +1,17 @@
 <p>agenda-app works!</p>
+<input type="text" [disabled]="isDisabled" value="Rehan"/>
+
+<ng-container 
+    *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+</ng-container>
+
+<ng-template #loggedIn>
+    <div>
+        Welcome, back user
+    </div>
+</ng-template>
+<ng-template #loggedOut>
+    <div>
+        Please login
+    </div>
+</ng-template>
