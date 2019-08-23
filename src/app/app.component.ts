@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { ServerComponent } from './server/server.component';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,10 @@ import { ServerComponent } from './server/server.component';
 })
 export class AppComponent implements OnInit {
   //@ViewChild( ServerComponent ,{static:false}) child: ServerComponent ;
+  timeInput = new FormControl();
+  subjectInput = new FormControl();
+  locationInput = new FormControl();
+  descriptionInput = new FormControl();
 
   ngOnInit() {
 
@@ -30,22 +34,6 @@ export class AppComponent implements OnInit {
     subject: "Breakfast with Simon",
     location: "Lounge Caffe",
     description: "Discuss Q3 targets"
-  },
-  {
-    time: '09:00',
-    subject: "Daily meeting",
-    location: "Lounge Caffe",
-    description: "Discuss Q3 targets"
-  },
-  {
-    time: '10:00',
-    subject: "Calling HRs",
-    location: "Lounge Caffe",
-    description: "Discuss Q3 targets"
-  },
-  {
-    time: '08:00',
-    subject: "Breakfast with Simon"
   }
   ]
 
@@ -56,12 +44,20 @@ export class AppComponent implements OnInit {
 
   addEvent(){
     const newEvent: any = {
-      time: "11:00",
-      subject: "Calling Scrum",
-      location: "Karachi, Pakistan",
-      description: "Discuss Catalyst"
+      time: this.timeInput.value,
+      subject: this.subjectInput.value,
+      location: this.locationInput.value,
+      description: this.descriptionInput.value
     }
 
     this.events.push(newEvent);
+    this.clear();
+  }
+
+  clear(){
+     this.timeInput.setValue('');
+     this.subjectInput.setValue('');
+     this.locationInput.setValue('');
+     this.descriptionInput.setValue('');
   }
 }
